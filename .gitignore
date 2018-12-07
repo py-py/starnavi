@@ -1,3 +1,8 @@
+# Custom
+#.env
+.idea/*
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -13,7 +18,7 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-.eggs/
+.eggs/s
 lib/
 lib64/
 parts/
@@ -82,7 +87,6 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
