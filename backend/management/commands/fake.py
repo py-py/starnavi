@@ -3,6 +3,7 @@ from random import choice, shuffle
 
 from faker import Faker
 from dotenv import load_dotenv
+from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
 
@@ -14,8 +15,9 @@ class Command(BaseCommand):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fake = Faker()
         self.users = []
+        self.fake = Faker()
+
 
     def handle(self, *args, **options):
         load_dotenv()
@@ -41,7 +43,11 @@ class Command(BaseCommand):
 
     def generate_posts(self, count):
         for user in self.users:
-            posts = [Post(text=self.fake.text(), user=user) for _ in range(count)]
+            posts = [Post(
+                text=self.fake.text(),
+                user=user,
+                # date=self.fake.past_datetime(start_date="-30d", tzinfo=timezone.utc),
+            ) for _ in range(count)]
             user.posts.bulk_create(posts)
 
     def generate_likes(self, count):

@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import gettext as _
@@ -14,6 +15,7 @@ STATUS = (
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts', verbose_name=_('User'))
     text = models.TextField(verbose_name=_('Text'))
+    date = models.DateTimeField(verbose_name=_('Date'), auto_now_add=True)
 
     def count_likes(self):
         return self.likes.filter(status=1).count()

@@ -1,3 +1,5 @@
+from .base_settings import *
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -6,4 +8,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
+    # 'EXCEPTION_HANDLER': 'project.rest_exception.custom_exception_handler'
 }
+
+ALLOWED_HOSTS += ['localhost', 'testserver']

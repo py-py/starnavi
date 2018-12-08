@@ -5,5 +5,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/', include('backend_rest.urls')),
-
 ]
