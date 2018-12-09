@@ -8,7 +8,6 @@ __all__ = ('PostViewSet', )
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    # permission_classes = (IsOwnerOrReadOnly,)  # TODO: change?
     permission_classes = (IsSuperUserOrIsOwnerOrReadOnly,)
     queryset = Post.objects.order_by('-date').all()
     serializer_class = PostSerializer

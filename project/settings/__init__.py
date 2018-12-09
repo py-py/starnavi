@@ -1,6 +1,6 @@
 import os
-
 environment = os.getenv('ENVIRONMENT', 'dev')
+
 from .base_settings import *
 
 if environment == 'dev':
@@ -9,4 +9,4 @@ if environment == 'dev':
 if environment == 'prod':
     from .prod_settings import *
 
-from .templates import *
+from .base_templates import *

@@ -4,7 +4,6 @@ from random import choice, shuffle
 from faker import Faker
 from dotenv import load_dotenv
 from django.utils import timezone
-from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
 
 from backend.models import *
@@ -17,7 +16,6 @@ class Command(BaseCommand):
         super().__init__(*args, **kwargs)
         self.users = []
         self.fake = Faker()
-
 
     def handle(self, *args, **options):
         load_dotenv()

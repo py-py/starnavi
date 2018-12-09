@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from backend.models import *
 from rest_framework import serializers
 
 from backend_rest.serializers import PostSerializer
