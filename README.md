@@ -7,22 +7,22 @@ Quickstart:
 4. python manage.py runserver
 5. python bot.py
 
-For check result:
+### For check result:
 
 - curl http://localhost:8000/api/posts/
 
 - curl http://localhost:8000/api/users/
 
 
-API Docs:
+### API Docs:
 http://localhost:8000/api/docs/
 
-Admin(dadmin/dadmin01):
+###Admin(dadmin/dadmin01):
 http://localhost:8000/admin/ 
 
 Some configs are in .env
 
-Example for displaying of using CLEARBIT and EMAILHUNTER services:
+###Example for displaying of using CLEARBIT and EMAILHUNTER services:
 
 curl -X POST \
   http://localhost:8000/api/signup/ \
@@ -33,3 +33,7 @@ curl -X POST \
   "password": "password",
   "email": "alex@clearbit.com"
 }'
+
+### Docker
+- docker build -t starnavi . --no-cache
+- docker run --name starnavi -d -p 8000:8000 starnavi
