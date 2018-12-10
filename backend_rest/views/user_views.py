@@ -27,9 +27,11 @@ class SignUpViewSet(mixins.CreateModelMixin,
         user = User.objects.create_user(**serializer.validated_data)
         user.set_password(serializer.validated_data['password'])
         user.save()
-        if not settings.DEBUG:
-            # TODO: better to use celery or other an asynchronous task queue/job queue;
+
+        # TODO: better to use celery or other an asynchronous task queue/job queue;
+        if settings.CLEARBIT['STATUS']:
             handle_clearbit(user_id=user.id)
+        if settings.EMAILHUNTER['STATUS']:
             handle_emailhunter(user_id=user.id)
 
 

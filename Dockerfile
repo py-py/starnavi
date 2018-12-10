@@ -8,9 +8,9 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN chmod +x boot.sh
 
-ENV ENVIRONMENT prod
+ENV ENVIRONMENT dev
 
 CMD ./boot.sh
 
-# docker build -t starnavi .
-# docker run -d -p 8000:8000 starnavi
+# docker build -t starnavi . --no-cache
+# docker run --name starnavi -d -p 8000:8000 starnavi

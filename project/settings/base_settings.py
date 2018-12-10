@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'backend_rest',
 
     'rest_framework',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -112,22 +113,22 @@ DATABASES = {
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-        # 'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
-    # 'EXCEPTION_HANDLER': 'project.rest_exception.custom_exception_handler'
 }
 
 ALLOWED_HOSTS += ['localhost', 'testserver', '127.0.0.1']
 
 EMAILHUNTER = {
+    'STATUS': True,
     'URL_EMAIL_VERIFICATION_TEMPLATE': 'https://api.hunter.io/v2/email-verifier?email={email}&api_key={api_key}',
     'API_KEY': os.getenv('EMAILHUNTER_API_KEY'),
 }
 
 CLEARBIT = {
+    'STATUS': True,
     'URL_ENRICHMENT_TEMPLATE': 'https://person-stream.clearbit.com/v2/combined/find?email={email}',
     'API_KEY': os.getenv('CLEARBIT_API_KEY'),
 }
