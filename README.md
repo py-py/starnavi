@@ -7,23 +7,19 @@ Quickstart:
 4. python manage.py runserver
 5. python bot.py
 
+Some configs are in .env
 ### For check result:
-
 - curl http://localhost:8000/api/posts/
-
 - curl http://localhost:8000/api/users/
 
 
 ### API Docs:
 http://localhost:8000/api/docs/
 
-###Admin(dadmin/dadmin01):
+### Admin(dadmin/dadmin01):
 http://localhost:8000/admin/ 
 
-Some configs are in .env
-
-###Example for displaying of using CLEARBIT and EMAILHUNTER services:
-
+### Example for displaying of using CLEARBIT and EMAILHUNTER services:
 curl -X POST \
   http://localhost:8000/api/signup/ \
   -H 'cache-control: no-cache' \
