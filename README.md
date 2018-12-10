@@ -21,3 +21,15 @@ Admin(dadmin/dadmin01):
 http://localhost:8000/admin/ 
 
 Some configs are in .env
+
+Example for displaying of using CLEARBIT and EMAILHUNTER services:
+
+curl -X POST \
+  http://localhost:8000/api/signup/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+  "username": "alexclearbit",
+  "password": "password",
+  "email": "alex@clearbit.com"
+}'
