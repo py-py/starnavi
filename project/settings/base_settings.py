@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     'backend_rest',
 
     'rest_framework',
-    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
