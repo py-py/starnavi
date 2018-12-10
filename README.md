@@ -9,9 +9,9 @@ Quickstart:
 
 For check result:
 
-curl http://localhost:8000/api/posts/
+- curl http://localhost:8000/api/posts/
 
-curl http://localhost:8000/api/users/
+- curl http://localhost:8000/api/users/
 
 
 API Docs:
